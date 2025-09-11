@@ -1,9 +1,5 @@
 package algoritmos.assintatica.codigos;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-
 public class MergeSort {
    public static void mergeSort(int[] vetor) {
       if (vetor.length <= 1)
@@ -32,34 +28,6 @@ public class MergeSort {
       }
       while (j < right.length) {
          vetor[k++] = right[j++];
-      }
-   }
-
-   public static void inserirValores() {
-      try (Scanner scan = new Scanner(System.in)) {
-         Integer tamanho = 0, valorInicial = 0, valorFinal = 0;
-         long inicio, fim;
-         while (tamanho <= 0 || valorFinal <= valorInicial) {
-            System.out.println("Informe o tamanho do vetor: ");
-            tamanho = scan.nextInt();
-            System.out.println("Informe o valor inicial do Random: ");
-            valorInicial = scan.nextInt();
-            System.out.println("Informe o valor final do Random: ");
-            valorFinal = scan.nextInt();
-         }
-         int[] dados = new Random().ints(tamanho, valorInicial, valorFinal).toArray();
-         System.out.println("Vetor desordenado: ");
-         System.out.println(Arrays.toString(dados));
-         System.out.println("\n");
-         inicio = System.nanoTime();
-         mergeSort(dados);
-         fim = System.nanoTime();
-         System.out.println("\n");
-         System.out.println("Vetor ordenado:");
-         System.out.println(Arrays.toString(dados));
-         System.out.println("Tempo de execução do Merge Sort: " + (fim - inicio) + "ms");
-      } catch (Exception e) {
-         System.out.println("Houve uma excessão durante a execução: " + e.getMessage());
       }
    }
 }
