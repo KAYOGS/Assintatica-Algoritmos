@@ -14,7 +14,7 @@ public class MergeSort {
       merge(vetor, left, right);
    }
 
-   public static void merge(int[] vetor, int[] left, int[] right) {
+   private static void merge(int[] vetor, int[] left, int[] right) {
       int i = 0, j = 0, k = 0;
       while (i < left.length && j < right.length) {
          if (left[i] <= right[j]) {
