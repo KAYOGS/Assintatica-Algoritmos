@@ -3,7 +3,7 @@ package algoritmos.assintatica.codigos;
 public class InsertionSort {
     public static void insertionSort(int[] vetor) {
         int j, aux;
-        int tamanhoV = 0;
+        int tamanhoV = vetor.length;
 
         for (int i = 0; i < tamanhoV; i++) {
             vetor[i] = (int) (Math.random() * tamanhoV);
@@ -17,9 +17,6 @@ public class InsertionSort {
                 j--;
             }
             vetor[j = 1] = aux;
-        }
-        for (int i = 0; i < tamanhoV; i++) {
-            System.out.println(vetor[1]);
         }
     }
 }
