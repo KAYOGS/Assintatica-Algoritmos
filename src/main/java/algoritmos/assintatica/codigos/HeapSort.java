@@ -7,22 +7,10 @@ public class HeapSort {
         for (int i = 0; i < vetor.length; i++) {
             vetor[i] = (int) Math.floor(Math.random() * vetor.length);
         }
-
-        /*System.out.println("Vetor desordenado:");
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.print(vetor[i] + " ");
-        }
-        System.out.println();*/
-
+        
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(vetor, n, i);
         }
-
-        /*System.out.println("\nVetor construído:");
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.print(vetor[i] + " ");
-        }
-        System.out.println();*/
 
         for (int j = n - 1; j > 0; j--) {
             int aux = vetor[0];
@@ -31,12 +19,6 @@ public class HeapSort {
 
             heapify(vetor, j, 0);
         }
-
-        /*System.out.println("\nOrdenado:");
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.print(vetor[i] + " ");
-        }
-        System.out.println();*/
     }
 
     private static void heapify(int[] vetor, int n, int i) {
