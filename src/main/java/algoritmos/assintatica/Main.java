@@ -28,45 +28,45 @@ public class Main {
             document.open();
 
             Font titleFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
-            document.add(new Paragraph("Relatório Comparativo de Algoritmos de Ordenação", titleFont));
+            document.add(new Paragraph("Relatorio Comparativo de Algoritmos de Ordenacao", titleFont));
             document.add(new Paragraph(" "));
-            document.add(new Paragraph("Análise Teórica:", titleFont));
+            document.add(new Paragraph("Analise Teorica:", titleFont));
             document.add(new Paragraph(" "));
             
             document.add(new Paragraph("Bubble Sort:"));
-            document.add(new Paragraph(" - Complexidade de Tempo: O(n²) para o melhor, médio e pior caso."));
-            document.add(new Paragraph(" - Complexidade de Espaço: O(1)."));
+            document.add(new Paragraph(" - Complexidade de Tempo: O(n2) para o melhor, medio e pior caso."));
+            document.add(new Paragraph(" - Complexidade de Espaco: O(1)."));
             document.add(new Paragraph(" - Notas: Extremamente ineficiente para grandes volumes de dados."));
 
             document.add(new Paragraph(" "));
             document.add(new Paragraph("Merge Sort:"));
             document.add(new Paragraph(" - Complexidade de Tempo: O(n log n) em todos os casos."));
-            document.add(new Paragraph(" - Complexidade de Espaço: O(n)."));
-            document.add(new Paragraph(" - Notas: Eficiente e estável, mas consome mais memória."));
+            document.add(new Paragraph(" - Complexidade de Espaco: O(n)."));
+            document.add(new Paragraph(" - Notas: Eficiente e estavel, mas consome mais memoria."));
 
             document.add(new Paragraph(" "));
             document.add(new Paragraph("Quick Sort:"));
-            document.add(new Paragraph(" - Complexidade de Tempo: O(n log n) no caso médio. O(n²) no pior caso."));
-            document.add(new Paragraph(" - Complexidade de Espaço: O(log n) a O(n)."));
-            document.add(new Paragraph(" - Notas: Um dos mais rápidos na prática, mas sensível à entrada no pior caso."));
+            document.add(new Paragraph(" - Complexidade de Tempo: O(n log n) no caso medio. O(n2) no pior caso."));
+            document.add(new Paragraph(" - Complexidade de Espaco: O(log n) a O(n)."));
+            document.add(new Paragraph(" - Notas: Um dos mais rapidos na pratica, mas sensivel a entrada no pior caso."));
 
             document.add(new Paragraph(" "));
             document.add(new Paragraph("Heap Sort:"));
             document.add(new Paragraph(" - Complexidade de Tempo: O(n log n) em todos os casos."));
-            document.add(new Paragraph(" - Complexidade de Espaço: O(1)."));
-            document.add(new Paragraph(" - Notas: Eficiente, estável e usa pouca memória."));
+            document.add(new Paragraph(" - Complexidade de Espaco: O(1)."));
+            document.add(new Paragraph(" - Notas: Eficiente, estavel e usa pouca memoria."));
             
             document.add(new Paragraph(" "));
             document.add(new Paragraph("Insertion Sort:"));
-            document.add(new Paragraph(" - Complexidade de Tempo: O(n) no melhor caso. O(n²) no caso médio e pior caso."));
-            document.add(new Paragraph(" - Complexidade de Espaço: O(1)."));
-            document.add(new Paragraph(" - Notas: Extremamente rápido para dados quase ordenados."));
+            document.add(new Paragraph(" - Complexidade de Tempo: O(n) no melhor caso. O(n2) no caso medio e pior caso."));
+            document.add(new Paragraph(" - Complexidade de Espaco: O(1)."));
+            document.add(new Paragraph(" - Notas: Extremamente rapido para dados quase ordenados."));
 
             document.add(new Paragraph(" "));
             document.add(new Paragraph("Selection Sort:"));
-            document.add(new Paragraph(" - Complexidade de Tempo: O(n²) em todos os casos."));
-            document.add(new Paragraph(" - Complexidade de Espaço: O(1)."));
-            document.add(new Paragraph(" - Notas: Sempre realiza o mesmo número de comparações."));
+            document.add(new Paragraph(" - Complexidade de Tempo: O(n2) em todos os casos."));
+            document.add(new Paragraph(" - Complexidade de Espaco: O(1)."));
+            document.add(new Paragraph(" - Notas: Sempre realiza o mesmo numero de comparacoes."));
             
             document.add(new Paragraph(" "));
 
@@ -133,7 +133,7 @@ public class Main {
                 dataset.addSeries(selectSeries);
 
                 JFreeChart chart = ChartFactory.createXYLineChart(
-                    "Tempo de Execução - " + tipo,
+                    "Tempo de Execucao - " + tipo,
                     "Tamanho do Vetor (n)",
                     "Tempo (ms)",
                     dataset
@@ -144,13 +144,13 @@ public class Main {
                 Image chartImage = Image.getInstance(bas.toByteArray());
                 
                 document.add(new Paragraph(" "));
-                document.add(new Paragraph("Gráfico de Comparação: " + tipo, new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD)));
+                document.add(new Paragraph("Grafico de Comparacao: " + tipo, new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD)));
                 document.add(new Paragraph(" "));
                 document.add(chartImage);
             }
 
             document.close();
-            System.out.println("Relatório PDF criado com sucesso!");
+            System.out.println("Relatorio PDF criado com sucesso!");
 
         } catch (Exception e) {
             e.printStackTrace();
