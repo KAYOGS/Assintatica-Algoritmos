@@ -12,26 +12,22 @@ public class Entradas {
         Map<String, int[]> entradas = new HashMap<>();
         Random rand = new Random();
 
-        int[] baseUnico = new int[tamanho];
-        Set<Integer> uniqueNums = new HashSet<>();
-        while (uniqueNums.size() < tamanho) {
-            uniqueNums.add(rand.nextInt(tamanho * 10));
-        }
-        int i = 0;
-        for (Integer num : uniqueNums) {
-            baseUnico[i++] = num;
-        }
-
         int[] baseComRepeticao = new int[tamanho];
         for (int j = 0; j < tamanho; j++) {
             baseComRepeticao[j] = rand.nextInt(tamanho);
         }
 
-        int[] crescenteComRepeticao = Arrays.copyOf(baseComRepeticao, tamanho);
+        Set<Integer> uniqueNums = new HashSet<>();
+        while (uniqueNums.size() < tamanho) {
+            uniqueNums.add(rand.nextInt(tamanho * 10));
+        }
+        int[] baseUnico = uniqueNums.stream().mapToInt(Integer::intValue).toArray();
+
+        int[] crescenteComRepeticao = baseComRepeticao.clone();
         Arrays.sort(crescenteComRepeticao);
         entradas.put("Crescente com repeticao", crescenteComRepeticao);
 
-        int[] decrescenteComRepeticao = Arrays.copyOf(crescenteComRepeticao, tamanho);
+        int[] decrescenteComRepeticao = crescenteComRepeticao.clone();
         for (int j = 0; j < tamanho / 2; j++) {
             int temp = decrescenteComRepeticao[j];
             decrescenteComRepeticao[j] = decrescenteComRepeticao[tamanho - 1 - j];
@@ -39,13 +35,13 @@ public class Entradas {
         }
         entradas.put("Decrescente com repeticao", decrescenteComRepeticao);
 
-        entradas.put("Aleatorio com repeticao", baseComRepeticao);
+        entradas.put("Aleatorio com repeticao", baseComRepeticao.clone());
 
-        int[] crescenteSemRepeticao = Arrays.copyOf(baseUnico, tamanho);
+        int[] crescenteSemRepeticao = baseUnico.clone();
         Arrays.sort(crescenteSemRepeticao);
         entradas.put("Crescente sem repeticao", crescenteSemRepeticao);
 
-        int[] decrescenteSemRepeticao = Arrays.copyOf(crescenteSemRepeticao, tamanho);
+        int[] decrescenteSemRepeticao = crescenteSemRepeticao.clone();
         for (int j = 0; j < tamanho / 2; j++) {
             int temp = decrescenteSemRepeticao[j];
             decrescenteSemRepeticao[j] = decrescenteSemRepeticao[tamanho - 1 - j];
@@ -53,8 +49,7 @@ public class Entradas {
         }
         entradas.put("Decrescente sem repeticao", decrescenteSemRepeticao);
 
-        int[] aleatorioSemRepeticao = baseUnico;
-        entradas.put("Aleatorio sem repeticao", aleatorioSemRepeticao);
+        entradas.put("Aleatorio sem repeticao", baseUnico.clone());
 
         return entradas;
     }
