@@ -4,10 +4,7 @@ public class HeapSort {
     public static void heapSort(int[] vetor) {
         int n = vetor.length;
 
-        for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = (int) Math.floor(Math.random() * vetor.length);
-        }
-        
+        // Constrói o heap máximo (reorganiza o array)
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(vetor, n, i);
         }

@@ -19,7 +19,6 @@ import java.io.FileOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.*;
 
-
 public class Main {
     public static void main(String[] args) {
         int[] sizes = { 100000, 160000, 220000, 280000, 340000, 400000, 460000, 520000, 580000, 640000, 700000 };
@@ -36,7 +35,8 @@ public class Main {
             document.add(new Paragraph(" "));
 
             document.add(new Paragraph("Bubble Sort:"));
-            document.add(new Paragraph(" - Complexidade de Tempo: O(n2) para o melhor, medio e pior caso."));
+            document.add(
+                    new Paragraph(" - Complexidade de Tempo: O(n) no melhor caso. O(n2) no caso medio e pior caso."));
             document.add(new Paragraph(" - Complexidade de Espaco: O(1)."));
             document.add(new Paragraph(" - Notas: Extremamente ineficiente para grandes volumes de dados."));
 
